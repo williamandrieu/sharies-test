@@ -4,6 +4,7 @@ export const SplashScreen = () => {
     return (
         <div>
             <img src={logosharies}/>
+            <img src={""}/>
         </div>
     )
 }
