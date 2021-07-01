@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
 @font-face {
   font-family: 'Bon Vivant Family Serif';
@@ -27,17 +25,192 @@
   font-style: italic;
 }
 
-body, html {
+body, html, #root,.App, .login{
   height: 100%;
   width: 100%;
-  background-color: black;
 }
 
 .login {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.split-left{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.split-right{
+  width: 60%;
+}
+
+login-background-container {
+  width: 100%;
   height: 100%;
 }
 
-.loginbackground-image {
+.login-content{
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title{
   width: 100%;
+  text-align: center;
+}
+
+.title-hand{
+  font-family: 'Bon Vivant Family Script';
+  font-size: 48px;
+  line-height: 27px;
+  color: #FF6D55;
+
+}
+
+.title-serif{
+  font-family: 'Bon Vivant Family Serif';
+  font-size: 48px;
+  line-height: 59px;
+  color: black;
+  font-weight: bold;
+}
+
+.login-google-button{
+  width: 100%;
+  height: 40px;
+  border: 2px solid #E8E8E8;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.login-google-button > div{
+  font-family: 'Open Sans';
+  font-weight: 600;
+  color: black;
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-google-button > div > img{
+  margin-right: 6px;
+}
+
+.separator-email{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.separator-dash{
+  height: 2px;
+  background-color: #E8E8E8;
+  flex-grow: 1;
+}
+
+.separator-text{
+  font-family: 'Open Sans';
+  font-weight: 600;
+  color: #CBCBCB;
+  font-size: 9px;
+  justify-content: space-evenly;
+  padding: 0 17px;
+}
+
+.input-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align:start;
+}
+
+.input-wrapper > label{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  color: black;
+}
+
+.input-wrapper > input{
+    outline: none;
+    border: 2px solid #E8E8E8;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.input-wrapper > input:focus {
+  border: 2px solid #FF6D55;
+}
+
+.login-bottom-options{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.remember-check{
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 11px;
+  color: black;
+}
+
+.mdp-forgot{
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 11px;
+  color: #FF6D55;
+  cursor: pointer;
+}
+
+.orange-btn{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF6D55;
+  color: white;
+  border-radius: 8px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.ask-register{
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 11px;
+  color: black;
+}
+
+.ask-register > a{
+  color: #FF6D55;
+  cursor: pointer;
+}
+
+.logo-footer-login{
+  height: 25px;
+  position: absolute;
+  bottom: 45px;
+}
+
+.login-background-container{
   height: 100%;
+  width: 100%;
+  background-image: url(images/loginbackground.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
