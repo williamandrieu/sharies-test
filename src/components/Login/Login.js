@@ -1,9 +1,10 @@
 import { LoginState } from "./LoginPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { auth, googleProvider } from '../../firebase'
 
 import logogoogle from "../../images/logogoogle.png"
 import logosharies from "../../images/logosharies.png"
+import { setTitle } from "../../util";
 
 export const Login = (props) =>{
 
@@ -27,6 +28,10 @@ export const Login = (props) =>{
             console.log(error)
         })
     }
+
+    useEffect(()=>{
+        setTitle("Login")
+    },[])
 
     return (
         <div className={"login"}>

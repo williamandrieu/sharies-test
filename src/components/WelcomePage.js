@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import { auth } from '../firebase'
+import { setTitle } from '../util'
 
 
 export const  WelcomePage = (props) =>{
@@ -6,6 +8,10 @@ export const  WelcomePage = (props) =>{
     function signOut() {
         auth.signOut()
     }
+
+    useEffect(()=>{
+        setTitle("Profile")
+    },[])
 
     return (
         <div>
