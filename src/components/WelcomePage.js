@@ -1,16 +1,15 @@
-import firebase from "firebase/app"
-import "firebase/firestore"
-import "firebase/auth"
+import { auth } from '../firebase'
 
 
 export const  WelcomePage = (props) =>{
 
     function signOut() {
-        firebase.auth().signOut().then(r => console.log)
+        auth.signOut()
     }
 
     return (
         <div>
+            {auth.currentUser.email}
             <div onClick={signOut}>Se déconnecter</div>
         </div>
     )

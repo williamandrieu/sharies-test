@@ -1,9 +1,7 @@
 import signupbackground from "../../images/signupbackground.png";
 import {useState} from "react";
 import {LoginState} from "./LoginPage";
-import firebase from "firebase/app"
-import "firebase/firestore"
-import "firebase/auth"
+import { auth } from '../../firebase'
 
 export const SignUp = (props) => {
 
@@ -13,7 +11,7 @@ export const SignUp = (props) => {
     const [password, setPassword] = useState()
 
     const createAccount = () =>{
-        firebase.auth().createUserWithEmailAndPassword(email,password)
+        auth.createUserWithEmailAndPassword(email,password)
     }
 
     return (

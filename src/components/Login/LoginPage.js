@@ -12,7 +12,7 @@ export const LoginPage = (props) =>{
     const [currentState, setCurrentState] = useState(LoginState.LOGIN)
 
     return (
-        <div>
+        <div className={"login-wrapper"}>
             {currentState === LoginState.LOGIN && <Login changeParentState={setCurrentState}/>}
             {currentState === LoginState.SIGNUP && <SignUp changeParentState={setCurrentState}/>}
         </div>
