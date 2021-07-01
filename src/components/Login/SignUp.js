@@ -1,7 +1,8 @@
 import signupbackground from "../../images/signupbackground.png";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {LoginState} from "./LoginPage";
 import { auth } from '../../firebase'
+import { setTitle } from "../../util";
 
 export const SignUp = (props) => {
 
@@ -13,6 +14,10 @@ export const SignUp = (props) => {
     const createAccount = () =>{
         auth.createUserWithEmailAndPassword(email,password)
     }
+
+    useEffect(()=>{
+        setTitle("Signup")
+    },[])
 
     return (
         <div className={"login"}>
