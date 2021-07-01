@@ -1,8 +1,11 @@
 import signupbackground from "../../images/signupbackground.png";
 import {useEffect, useState} from "react";
 import {LoginState} from "./LoginPage";
-import { auth } from '../../firebase'
+import { auth, googleProvider } from '../../firebase'
 import { setTitle } from "../../util";
+
+import logogoogle from "../../images/logogoogle.png"
+import logosharies from "../../images/logosharies.png"
 
 export const SignUp = (props) => {
 
@@ -15,27 +18,74 @@ export const SignUp = (props) => {
         auth.createUserWithEmailAndPassword(email,password)
     }
 
+    const loginWithGoogle = () => {
+        auth
+            .signInWithPopup(googleProvider)
+            .then((result) => {
+                console.log(result)
+            }).catch((error) => {
+                console.error("ERREUR", error)
+            });
+    }
+
+    const loginWithEmail = () => {
+        auth.signInWithEmailAndPassword(email, password).then().catch((error)=>{
+            console.log(error)
+        })
+    }
+
     useEffect(()=>{
         setTitle("Signup")
     },[])
 
     return (
-        <div className={"login"}>
-            <div>
-                <label>
-                    Email
-                    <input type={"email"} value={email} onChange={(e) => { setEmail(e.target.value)}} />
-                </label>
-                <label>
-                    Password
-                <input type={"password"} value={password} onChange={(e) => { setPassword(e.target.value)}}/>
-                </label>
-                <div onClick={createAccount}>Create account</div>
-                <div onClick={() => changeParentState(LoginState.LOGIN)}>Login</div>
+        <div className={"signup"}>
+
+        <div className={"split-left"}>
+
+       <div className={"login-content"}>
+           <div className={"login-title"}>
+               <div className={"title-hand"}>Créer votre</div>
+               <div className={"title-serif"}>Compte</div>
+           </div>
+            <div className={"login-google-button"} onClick={loginWithGoogle}>
+                <div>
+                    <img src={logogoogle}/>
+                    Inscription avec Google
+                </div>
             </div>
-            <div className={"signupbackground-image"}>
-                <img src={signupbackground}/>
-            </div>
+           <div className={"separator-email"}>
+                <div className={"separator-dash"}></div>
+                <div className={"separator-text"}>Ou utiliser votre email</div>
+                <div className={"separator-dash"}></div>
+           </div>
+           <div className={"input-wrapper"}>
+                <label>Email</label>
+                <input placeholder="email@example.com" type={"email"} value={email} onChange={(e) => { setEmail(e.target.value)}} />
+           </div>
+           <div className={"input-wrapper"}>
+                <label>Mot de passe</label>
+                <input id="mdpText" placeholder="•••••••" type={"password"} value={password} onChange={(e) => { setPassword(e.target.value)}}/>
+           </div>
+           <div className={"signup-bottom-options"}>
+                <div>En cliquant sur s’incrire vous acceptez nos<br/> <a>Condition général d’utilisation.</a></div>
+           </div>
+
+           <div className={"orange-btn"}  onClick={createAccount}>
+                S'inscrire
+           </div>
+
+           <div className={"ask-register"}>
+                Déjà inscrit ? <a onClick={() => changeParentState(LoginState.LOGIN)}>Se connecter</a>.
+           </div>
+       </div>
+        <img className={"logo-footer-login"} src={logosharies} />
         </div>
+
+       <div className={"split-right"}>
+        <div className={"signup-background-container"}>
+        </div>
+        </div>
+    </div>
     )
 }
