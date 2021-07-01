@@ -5,7 +5,7 @@ import "firebase/firestore"
 import "firebase/auth"
 import {useEffect, useState} from "react";
 
-import {LoginPage} from "./components/LoginPage";
+import {LoginPage} from "./components/Login/LoginPage";
 import {WelcomePage} from "./components/WelcomePage";
 
 firebase.initializeApp({
