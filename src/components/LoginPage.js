@@ -1,30 +1,20 @@
-import firebase from "firebase/app"
-import "firebase/firestore"
-import "firebase/auth"
+import {useState} from "react";
+import {Login} from "./Login";
+import {SignUp} from "./SignUp";
 
-import loginbackground from "../images/loginbackground.png"
+export const LoginState =  {
+    LOGIN : "login",
+    SIGNUP : "signup"
+}
 
 export const LoginPage = (props) =>{
 
-    const provider = new firebase.auth.GoogleAuthProvider();
-    const login = () => {
-        firebase.auth()
-            .signInWithPopup(provider)
-            .then((result) => {
-                console.log(result)
-            }).catch((error) => {
-            console.error("ERREUR",error)
-        });
-    }
+    const [currentState, setCurrentState] = useState(LoginState.LOGIN)
 
     return (
-        <div className={"login"}>
-           <div>
-
-           </div>
-           <div className={"loginbackground-image"}>
-               <img src={loginbackground}/>
-           </div>
+        <div>
+            {currentState === LoginState.LOGIN && <Login changeParentState={setCurrentState}/>}
+            {currentState === LoginState.SIGNUP && <SignUp changeParentState={setCurrentState}/>}
         </div>
     )
 }
