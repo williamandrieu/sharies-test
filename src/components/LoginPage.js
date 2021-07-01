@@ -2,11 +2,11 @@ import firebase from "firebase/app"
 import "firebase/firestore"
 import "firebase/auth"
 
+import loginbackground from "../images/loginbackground.png"
 
 export const LoginPage = (props) =>{
-    
-    const provider = new firebase.auth.GoogleAuthProvider();
 
+    const provider = new firebase.auth.GoogleAuthProvider();
     const login = () => {
         firebase.auth()
             .signInWithPopup(provider)
@@ -18,11 +18,13 @@ export const LoginPage = (props) =>{
     }
 
     return (
-        <div>
-            <div onClick={login}>LOGIN</div>
-            <div>
+        <div className={"login"}>
+           <div>
 
-            </div>
+           </div>
+           <div className={"loginbackground-image"}>
+               <img src={loginbackground}/>
+           </div>
         </div>
     )
 }
