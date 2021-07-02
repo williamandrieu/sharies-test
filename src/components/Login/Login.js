@@ -1,6 +1,6 @@
 import { LoginState } from "./LoginPage";
 import { useEffect, useState } from "react";
-import { auth, googleProvider } from '../../firebase'
+import { appCheck, auth, googleProvider } from '../../firebase'
 
 import logogoogle from "../../images/logogoogle.png"
 import logosharies from "../../images/logosharies.png"

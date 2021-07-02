@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { auth } from '../firebase'
 import { setTitle } from '../util'
 
+import avatar from '../images/avatar.png'
+
 const menuItemList = [
    {title:"Profile"},
    {title:"Documents" },
@@ -27,13 +29,13 @@ export const WelcomePage = (props) => {
     return (
         <div>
             {auth.currentUser.email}
-            <div onClick={signOut}>Se déconnecter</div>
+            <div onClick={signOut}>Déconnection</div>
             <LeftMenu>
                 {menuItemList.map((item,index) => (<LeftMenuItem onClick={()=>setCurrentState(index)} isSelected={index === currentState} title={item.title}/>))}
             </LeftMenu>
             <div>
                 <div>{menuItemList[currentState].title}</div>
-                <img src={auth.currentUser.photoURL}/>
+                <img src={auth.currentUser.photoURL ?? avatar}/>
                 <div>Bienvenue {auth.currentUser.displayName ?? auth.currentUser.email}</div>
             </div>
         </div>
