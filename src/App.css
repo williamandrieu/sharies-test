@@ -25,7 +25,7 @@
   font-style: italic;
 }
 
-body, html, #root,.App, .login, .signup, .login-wrapper{
+body, html, #root,.App, .login, .signup, .login-wrapper,.welcome-wrapper{
   height: 100%;
   width: 100%;
 }
@@ -354,6 +354,56 @@ login-background-container {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.welcome-wrapper{
+  display: flex;
+}
+
+.left-menu{
+  background-color: #FF6D55;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+}
+
+.left-menu-logo{
+  width: 145px;
+  margin: 50px 0 50px 0;
+}
+
+.left-menu-item{
+  background-color: #DF614C;
+  color: white;
+  width: 85%;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.left-menu-item.selected{
+  background-color: #F9A294;
+}
+
+.left-menu-item-icon{
+  width: 11px;
+  height: 11px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.disconnection-btn{
+  color: white;
+  font-weight: 500;
+  justify-self: flex-end;
+}
+
+.profile-image{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
 }
 
 @media only screen and (max-width : 1224px){
