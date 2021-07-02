@@ -3,6 +3,8 @@ import {useEffect, useState} from "react";
 import {LoginState} from "./LoginPage";
 import { auth } from '../../firebase'
 import { setTitle } from "../../util";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const SignUp = (props) => {
 
@@ -12,7 +14,19 @@ export const SignUp = (props) => {
     const [password, setPassword] = useState()
 
     const createAccount = () =>{
-        auth.createUserWithEmailAndPassword(email,password)
+        try{
+            auth.createUserWithEmailAndPassword(email,password)
+        }catch(error){
+            toast.error('💥 Email ou mot de passe invalide', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
+        }
     }
 
     useEffect(()=>{
@@ -36,6 +50,7 @@ export const SignUp = (props) => {
             <div className={"signupbackground-image"}>
                 <img src={signupbackground}/>
             </div>
+            <ToastContainer/>
         </div>
     )
 }

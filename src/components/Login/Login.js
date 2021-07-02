@@ -5,6 +5,8 @@ import { auth, googleProvider } from '../../firebase'
 import logogoogle from "../../images/logogoogle.png"
 import logosharies from "../../images/logosharies.png"
 import { setTitle } from "../../util";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Login = (props) =>{
 
@@ -25,7 +27,15 @@ export const Login = (props) =>{
 
     const loginWithEmail = () => {
         auth.signInWithEmailAndPassword(email, password).then().catch((error)=>{
-            console.log(error)
+            toast.error('💥 Email ou mot de passe invalide', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
         })
     }
 
@@ -35,7 +45,7 @@ export const Login = (props) =>{
 
     return (
         <div className={"login"}>
-
+            <ToastContainer/>
             <div className={"split-left"}>
 
            <div className={"login-content"}>
