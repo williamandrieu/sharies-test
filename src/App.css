@@ -395,3 +395,29 @@ login-background-container {
       bottom: 15px;
     }
   }
+
+
+  /*------------- Splash screen ---------------*/
+
+  .splash-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.loading{
+  animation: rotation 1s infinite linear;
+  margin-top: 40px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(359deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

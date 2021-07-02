@@ -1,10 +1,11 @@
 import logosharies from '../images/logosharies.png'
+import loading from '../images/loading.png'
 
 export const SplashScreen = () => {
     return (
-        <div>
+        <div className="splash-wrapper">
             <img src={logosharies}/>
-            <img src={""}/>
+            <img className={"loading"} src={loading}/>
         </div>
     )
 }
