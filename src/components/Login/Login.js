@@ -4,6 +4,7 @@ import { auth, googleProvider } from '../../firebase'
 
 import logogoogle from "../../images/logogoogle.png"
 import logosharies from "../../images/logosharies.png"
+import check from "../../images/check.svg"
 import { setTitle } from "../../util";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -70,10 +71,10 @@ export const Login = (props) =>{
                </div>
                <div className={"input-wrapper"}>
                     <label>Mot de passe</label>
-                    <input id="mpdText" type="password" placeholder="•••••••" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <input id="mdpText" type="password" placeholder="•••••••" value={password} onChange={(e) => setPassword(e.target.value)}/>
                </div>
                <div className={"login-bottom-options"}>
-                    <div className={"remember-check"}>Se souvenir de moi</div>
+                    <div className={"remember-check"}><img src={check}/>Se souvenir de moi</div>
                     <div className={"mdp-forgot"}>Mot de passe oublié ?</div>
                </div>
 
