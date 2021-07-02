@@ -4,6 +4,7 @@ import { setTitle } from '../util'
 
 import avatar from '../images/avatar.png'
 import logosharieswhite from '../images/logosharieswhite.svg'
+import edouard7 from '../images/edouar7.png'
 
 const menuItemList = [
     { title: "Profile" },
@@ -45,10 +46,36 @@ export const WelcomePage = (props) => {
 const Profile = () => {
     return (
         <div>
+        <div className={"profile-container"}>
             <img className={'profile-image'} src={auth.currentUser.photoURL ?? avatar} />
-            <div>Bonjour
-                <div>{auth.currentUser.displayName ?? auth.currentUser.email}</div>
+            <div className={"login-title"}>
+                   <div className={"title-hand"}>Bonjour</div>
+                   <div className={"title-serif"}>{auth.currentUser.displayName ?? auth.currentUser.email}</div>
+               </div>
+        </div>
+        <div className={"card-coliv"}>
+            <div className={"top-card"}>
+                <div className={"card-title"}>Edouard VII</div>
+                <div className={"btn-card"}>Gérer mon abonnement</div>
             </div>
+            <div className={"bottom-card"}>
+                <div className={"cardd"}>
+                    <div className={"info-container"}>
+                        <div className={"info-title"}>Logement</div>
+                        <div className={"info-amount"}>1 250€</div>
+                    </div>
+                    <div className={"info-container"}>
+                        <div className={"info-title"}>Services</div>
+                        <div className={"info-amount"}>120€</div>
+                    </div>
+                </div>
+                <div className={"info-container"}>
+                        <div className={"info-title"}>Total</div>
+                        <div className={"info-amount"}>1 370€</div>
+                    </div>
+            </div>
+            
+        </div>
         </div>
     )
 }

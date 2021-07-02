@@ -400,11 +400,7 @@ login-background-container {
   justify-self: flex-end;
 }
 
-.profile-image{
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-}
+
 
 @media only screen and (max-width : 1224px){
   .split-left {
@@ -471,3 +467,97 @@ login-background-container {
     transform: rotate(0deg);
   }
 }
+
+/*------------------ Profile page -------------------*/
+
+.profile-container{
+  display: flex;
+  flex-direction: row;
+  padding: 5vh 5vw;
+  align-items: center;
+}
+
+.profile-image{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  margin-right: 100px;
+}
+
+.card-coliv{
+  display: flex;
+  flex-direction: column;
+  height: 270px;
+  width: 520px;
+  justify-content: space-between;
+  padding: 15px;
+  background-image: url(images/bg-card.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 5vh 5vw;
+  border-radius: 8px;
+}
+
+.top-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  color: #FFFFFF;
+}
+
+.btn-card{
+  background-color: white;
+  color: #FF6D55;
+  font-size: 13px;
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.bottom-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  margin: 0 8px;
+}
+
+.info-title{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.58);
+  margin-bottom: 4px;
+}
+
+.info-amount{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  color: #FFFFFF;
+}
+.cardd{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+
