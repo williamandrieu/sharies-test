@@ -4,15 +4,17 @@ import { setTitle } from '../util'
 
 import avatar from '../images/avatar.png'
 import logosharieswhite from '../images/logosharieswhite.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFileAlt, faUser, faFolder, faConciergeBell, faEnvelope, faBookOpen, faBullhorn } from '@fortawesome/free-solid-svg-icons'
 
 const menuItemList = [
-    { title: "Profile" },
-    { title: "Documents" },
-    { title: "Factures" },
-    { title: "Informations" },
-    { title: "Services" },
-    { title: "Reservation" },
-    { title: "Messagerie" }
+    { title: "Profile", icon: faUser },
+    { title: "Documents", icon: faFolder },
+    { title: "Factures", icon: faFileAlt },
+    { title: "Informations", icon: faBullhorn },
+    { title: "Services", icon: faConciergeBell },
+    { title: "Reservation", icon: faBookOpen },
+    { title: "Messagerie", icon: faEnvelope }
 ]
 
 export const WelcomePage = (props) => {
@@ -31,7 +33,7 @@ export const WelcomePage = (props) => {
         <div className={"welcome-wrapper"}>
             <LeftMenu>
                 <img className={'left-menu-logo'} src={logosharieswhite}/>
-                {menuItemList.map((item, index) => (<LeftMenuItem onClick={() => setCurrentState(index)} isSelected={index === currentState} title={item.title} />))}
+                {menuItemList.map((item, index) => (<LeftMenuItem onClick={() => setCurrentState(index)} isSelected={index === currentState} title={item.title} icon={item.icon} />))}
                 <div className={'disconnection-btn'} onClick={signOut}>Déconnexion</div>
             </LeftMenu>
             <div>
@@ -73,6 +75,7 @@ const LeftMenu = (props) => {
 const LeftMenuItem = (props) => {
     return (
         <div onClick={props.onClick} className={`left-menu-item ${props.isSelected ? "selected" : ""}`}>
+            <FontAwesomeIcon icon={props.icon} className={'left-menu-item-icon'}/>
             {props.title}
         </div>
     )
